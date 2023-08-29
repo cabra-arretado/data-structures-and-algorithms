@@ -1,4 +1,5 @@
 // given two crystal balls, and a building with n floors, find the exact floor where the ball start to break
+
 export default function two_crystal_balls(breaks: boolean[]): number {
   // The big O of this is supposed to be O(sqrt n)
   let breaks_sqrt = Math.floor(Math.sqrt(breaks.length));
