@@ -1,9 +1,8 @@
-// import the array_list module
-mod array_list;
+mod linked_list;
 
 fn main() {
     // create a new ArrayList
-    let list = array_list::ArrayList::<usize>::new(10);
+    let list = linked_list::LinkedList::new();
 
     // add some elements
     println!("{:#?}", list);
