@@ -15,10 +15,10 @@ class SinglyLinkedList:
 		if self.head is None:
 			self.head = new_node
 			return
-		l_node = self.head
-		while (l_node.next):
-			l_node.next = l_node
-		l_node.next = new_node
+		last_node = self.head
+		while (last_node.next):
+			last_node.next = last_node
+		last_node.next = new_node
 		self.length += 1
 	
 	def prepend(self, val):
@@ -29,6 +29,6 @@ class SinglyLinkedList:
 
 	def remove_at(self, val, index):
 		pass
-	
+    
 	def get(index):
 		pass
