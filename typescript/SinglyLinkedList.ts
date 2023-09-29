@@ -29,11 +29,11 @@ export default class SinglyLinkedList<T> {
 
   insertAt(item: T, idx: number): void {
     let new_node = new Node(item);
-    this.length++;
     let prev_node = this.get_node(idx);
     if (!prev_node) {
       return
     }
+    this.length++;
     new_node.next = prev_node.next;
     prev_node.next = new_node;
   }
@@ -53,12 +53,28 @@ export default class SinglyLinkedList<T> {
   }
 
   remove(item: T): T | undefined {
-    // To fix that
-    let idx = this.findFirstItemIndex(item)
-    if (!idx) {
+    let curr: Node<T> | undefined = this.head
+    if (this.length == 0 || !curr) {
       return
     }
-    return this.removeAt(idx)
+
+    if (curr.value == item){
+      let val = curr.value
+      this.head = curr.next
+      this.length--;
+      return val 
+    }
+    while (curr.next) {
+      if (curr.next.value == item) {
+        let val = curr.next.value
+        curr.next = curr.next.next
+        this.length--;
+        return val
+      }
+      curr = curr.next
+    }
+
+    return undefined
   }
 
   get(idx: number): T | undefined {
@@ -105,28 +121,4 @@ export default class SinglyLinkedList<T> {
     this.length--;
     return target_node.value
   }
-
-  // Get the index of the first occurrence of the item in the list
-  findFirstItemIndex(item: T): number | undefined {
-    let curr = this.head
-    if (!curr) {
-      return undefined;
-    }
-    let i = 0;
-    while (true){
-      if (curr.value === item) {
-        return i;
-      }
-      else {
-        if (curr.next) {
-          curr = curr.next;
-          i++;
-          continue;
-        }
-        break;
-      }
-    }
-    return undefined;
-  }
 }
-
