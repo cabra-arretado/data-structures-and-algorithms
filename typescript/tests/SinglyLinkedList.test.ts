@@ -1,5 +1,5 @@
 import SinglyLinkedList from "../SinglyLinkedList";
-import { expect, test, describe, mock, spyOn } from "bun:test";
+import { expect, test, describe } from "bun:test";
 
 describe("SinglyLinkedList", () => {
 
