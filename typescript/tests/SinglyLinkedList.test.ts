@@ -2,13 +2,15 @@ import SinglyLinkedList from "../SinglyLinkedList";
 import { expect, test, describe, mock, spyOn } from "bun:test";
 
 describe("SinglyLinkedList", () => {
-  test("should be able to create a new list", () => {
+
+  test("test instantiation", () => {
     const list = new SinglyLinkedList();
     expect(list).toBeDefined();
   });
 
   const list = new SinglyLinkedList();
-  test("should be able to append, prepend", () => {
+
+  test("test append, prepend", () => {
     list.append(1);
     // [1]
     expect(list.head?.value).toBe(1);
@@ -23,21 +25,19 @@ describe("SinglyLinkedList", () => {
     // [2, 1, 5, 6]
   });
 
-  test("should be abble to insert at", () => {
-    console.log(list.print());
-    list.insertAt(3, 2);
+  test("test get, get_node, insert_at", () => {
     // [2, 1, 5, 6]
-    console.log(list.print());
-    expect(list.head?.next?.next?.value).toBe(3);
+    expect(list.get_node(2)?.value).toBe(5);
+    expect(list.get(2)).toBe(5);
+    list.insertAt(2, 3);
+    // [2, 1, 3, 5, 6]
+    expect(list.length).toBe(5);
+    expect(list.get_node(2)?.value).toBe(3);
   });
 
-//   test("should be able to add a new node to the end of the list", () => {
-//     const list = new SinglyLinkedList();
-//     list.append(1);
-//     list.append(2);
-//     list.append(3);
-//     expect(list.head?.value).toBe(1);
-//     expect(list.head?.next?.value).toBe(2);
-//     expect(list.head?.next?.next?.value).toBe(3);
-//   });
+  test("test remove, remove_at", () => {
+    // [2, 1, 3, 5, 6]
+    expect(list.remove(3)).toBe(3);
+    expect(list.length).toBe(4);
+  });
 });

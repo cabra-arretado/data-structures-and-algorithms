@@ -27,9 +27,9 @@ export default class SinglyLinkedList<T> {
     this.head = node
   }
 
-  insertAt(item: T, idx: number): void {
+  insertAt(idx: number, item: T): void {
     let new_node = new Node(item);
-    let prev_node = this.get_node(idx);
+    let prev_node = this.get_node(idx - 1);
     if (!prev_node) {
       return
     }
