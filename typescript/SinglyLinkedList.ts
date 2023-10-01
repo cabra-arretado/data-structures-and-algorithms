@@ -98,7 +98,7 @@ export default class SinglyLinkedList<T> {
     return undefined
   }
 
-  removeAt(idx: number): T | undefined {
+  remove_at(idx: number): T | undefined {
     if (idx > this.length - 1 ||  idx < 0 || this.length == 0) {
       return 
     }
@@ -122,7 +122,7 @@ export default class SinglyLinkedList<T> {
     return target_node.value
   }
 
-  print(): void {
+  print(): string {
     let curr = this.head
     let arr = []
     while (curr) {
@@ -130,5 +130,6 @@ export default class SinglyLinkedList<T> {
       curr = curr.next
     }
     console.log(arr)
+    return "[" + arr.join(", ") + "]"
   }
 }

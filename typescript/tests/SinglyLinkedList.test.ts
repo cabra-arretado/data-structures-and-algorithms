@@ -38,6 +38,16 @@ describe("SinglyLinkedList", () => {
   test("test remove, remove_at", () => {
     // [2, 1, 3, 5, 6]
     expect(list.remove(3)).toBe(3);
+    // [2, 1, 5, 6]
     expect(list.length).toBe(4);
+    expect(list.remove_at(2)).toBe(5);
+    // [2, 1, 6]
+    expect(list.length).toBe(3);
   });
+  test("test print", () => {
+    // [2, 1, 6]
+    expect(list.print()).toBe("[2, 1, 6]");
+  }
+  );
+
 });
