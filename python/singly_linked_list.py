@@ -37,8 +37,19 @@ class SinglyLinkedList:
 		pass
     
 	def get(self, index):
-		pass
-	
+		if index > self.length or index < 0 or not self.head:
+			return None
+		if index == 0:
+			return self.head.value
+		curr = self.head
+		count = 0
+		while (count < index):
+			curr = curr.next
+			count += 1
+			if not curr:
+				return
+		return curr.value
+
 	def remove(self, val):
 		pass
 
