@@ -121,4 +121,14 @@ export default class SinglyLinkedList<T> {
     this.length--;
     return target_node.value
   }
+
+  print(): void {
+    let curr = this.head
+    let arr = []
+    while (curr) {
+      arr.push(curr.value)
+      curr = curr.next
+    }
+    console.log(arr)
+  }
 }
