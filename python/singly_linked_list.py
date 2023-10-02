@@ -68,7 +68,6 @@ if __name__ == "__main__":
     list.append(2)
     # [1, 2]
     assert list.head.value == 1
-    assert list.head.value == 2
     assert list.get(1) == 2
     print("test append passed")
 
