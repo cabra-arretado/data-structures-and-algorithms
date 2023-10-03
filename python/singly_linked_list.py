@@ -53,9 +53,6 @@ class SinglyLinkedList:
         new_node.next = curr_node
         self.length += 1
 
-
-
-
     def remove_at(self, val, index):
         pass
 
