@@ -53,8 +53,19 @@ class SinglyLinkedList:
         new_node.next = curr_node
         self.length += 1
 
-    def remove_at(self, val, index):
-        pass
+    def remove_at(self, index):
+        if index > self.length or index < 0 or not self.head:
+            return
+        if index == 0:
+            node = self.head
+            self.head = self.head.next
+            self.length -= 1
+            return node.value
+        prev_node = self.__get_node(index - 1)
+        node = prev_node.next
+        prev_node.next = prev_node.next.next
+        self.length -= 1
+        return node.value
 
     def __get_node(self, index) -> Node:
         if index > self.length or index < 0 or not self.head:
@@ -112,15 +123,15 @@ if __name__ == "__main__":
     assert len(list) == 5
     print("test insert_at passed")
 
-    # assert list.remove_at(1) == 'a'
-    # # ['z', 'b', 1, 2]
-    # assert list.head.value == 'z'
-    # assert len(list) == 4
-    # # ['b', 1, 2]
-    # assert list.remove_at(0) == 'z'
-    # assert list.head.value == 'b'
-    # assert len(list) == 3
-    # print("test remove_at passed")
+    assert list.remove_at(1) == 'a'
+    # ['z', 'b', 1, 2]
+    assert list.head.value == 'z'
+    assert len(list) == 4
+    # ['b', 1, 2]
+    assert list.remove_at(0) == 'z'
+    assert list.head.value == 'b'
+    assert len(list) == 3
+    print("test remove_at passed")
 
     # assert list.remove(1) == 1
     # # ['b', 2]
