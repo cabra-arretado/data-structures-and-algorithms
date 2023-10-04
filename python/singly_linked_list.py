@@ -24,7 +24,7 @@ class SinglyLinkedList:
 
         last_node = self.head
         while (last_node.next):
-            last_node.next = last_node
+            last_node = last_node.next
         last_node.next = new_node
         self.length += 1
 
@@ -87,7 +87,15 @@ class SinglyLinkedList:
             return node.value
 
     def remove(self, val):
-        pass
+        curr = self.head
+        if not curr:
+            return
+        for i in range(self.length): 
+            if not curr:
+                return
+            if curr.value == val:
+                return self.remove_at(i)
+            curr = curr.next
 
 
 if __name__ == "__main__":
@@ -133,15 +141,15 @@ if __name__ == "__main__":
     assert len(list) == 3
     print("test remove_at passed")
 
-    # assert list.remove(1) == 1
-    # # ['b', 2]
-    # assert len(list) == 2
-    # assert list.head.value == 'b'
-    # assert list.append(3)
-    # assert list.append(4)
-    # # ['b', 2, 3, 4]
-    # assert list.get(2) == 3
-    # assert list.get(0) == 'b'
-    # print("test get passed")
+    assert list.remove(1) == 1
+    # ['b', 2]
+    assert len(list) == 2
+    assert list.head.value == 'b'
+    list.append(3)
+    list.append(4)
+    # ['b', 2, 3, 4]
+    assert list.get(2) == 3
+    assert list.get(0) == 'b'
+    print("test get passed")
 
     print("remove_at, insert_at, remove, get tests passed")
