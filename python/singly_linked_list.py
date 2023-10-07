@@ -98,6 +98,7 @@ class SinglyLinkedList:
             curr = curr.next
 
 
+# TODO: Move that to the test file
 if __name__ == "__main__":
     # Tests
     print("Running tests...")
