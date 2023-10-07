@@ -32,3 +32,4 @@ class Stack:
     def peek(self):
         if self.tail:
             return self.tail.value
+

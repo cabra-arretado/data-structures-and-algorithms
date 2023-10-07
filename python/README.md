@@ -1,4 +1,7 @@
 # Python
 Python version 3.12
 Trying to only use standard library.
-Using `assert` and `print` for test instead of `unit` or `pytest` for the sake of simplicity for now.
+Using `unittest` in order to not have any external depedencies (and to need a venv).
+
+To run tests cd to the `python` folder and
+```python -m unittest```
