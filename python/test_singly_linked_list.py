@@ -44,7 +44,7 @@ class SLLTest(unittest.TestCase):
         self.assertEqual(sll.remove_at(1), 'a')
         # ['z', 'b', 1, 2]
         self.assertEqual(sll.head.value, 'z')
-        self.assertEqua(len(sll), 4)
+        self.assertEqual(len(sll), 4)
         # ['b', 1, 2]
         self.assertEqual(sll.remove_at(0), 'z')
         self.assertEqual(sll.head.value, 'b')
