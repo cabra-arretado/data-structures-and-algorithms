@@ -1,6 +1,9 @@
 from singly_linked_list import SinglyLinkedList
 import unittest
 
+# Run in order
+unittest.TestLoader.sortTestMethodsUsing = None
+
 class SLLTest(unittest.TestCase):
     sll = SinglyLinkedList()
 
