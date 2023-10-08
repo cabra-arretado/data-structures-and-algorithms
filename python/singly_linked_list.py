@@ -14,6 +14,19 @@ class SinglyLinkedList:
     def __len__(self):
         return self.length
 
+    def __str__(self):
+        curr = self.head
+        arr = []
+        while (curr):
+            arr.append(curr.value)
+            curr = curr.next
+        return str(arr)
+
+    def _init_from_list(self, arr):
+        """ Just for the tests """
+        for val in arr:
+            self.append(val)
+
     def append(self, val):
         new_node = Node(val)
 
