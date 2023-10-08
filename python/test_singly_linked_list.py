@@ -50,13 +50,15 @@ class SLLTest(unittest.TestCase):
         self.assertEqual(sll.head.value, 'b')
         self.assertEqual(len(sll), 3)
 
-    # def test_remove(self):
-    #     assert self.sll.remove(1) == 1
-    #     # ['b', 2]
-    #     assert len(self.sll) == 2
-    #     assert self.sll.head.value == 'b'
-    #     self.sll.append(3)
-    #     self.sll.append(4)
-    #     # ['b', 2, 3, 4]
-    #     assert self.sll.get(2) == 3
-    #     assert self.sll.get(0) == 'b'
+    def test_remove(self):
+        sll = SinglyLinkedList()
+        sll._init_from_list(['b', 1, 2])
+        self.assertEqual(sll.remove(1), 1)
+        # ['b', 2]
+        self.assertEqual(len(sll), 2)
+        self.assertEqual(sll.head.value, 'b')
+        sll.append(3)
+        sll.append(4)
+        # ['b', 2, 3, 4]
+        self.assertEqual(sll.get(2), 3)
+        self.assertEqual(sll.get(0), 'b')
