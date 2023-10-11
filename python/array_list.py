@@ -6,7 +6,7 @@ class ArrayList:
     size = None
     array = None
 
-    def __init__(self, capacity = 5):
+    def __init__(self, capacity=5):
         self.capacity = capacity
         # For the sake of using arra.array, we'll use -1 as a sentinel value
         self.array = array('i', [-1] * self.capacity)
@@ -24,7 +24,7 @@ class ArrayList:
         if self.size == self.capacity:
             self.capacity *= 2
             new_array = [None] * self.capacity
-            new_array[0:self.size] = self.array
+            new_array[:self.size] = self.array
             self.array = new_array
             self.array[self.size] = val
             self.size += 1
@@ -32,25 +32,15 @@ class ArrayList:
         self.array[self.size] = val
         self.size += 1
 
-
-
     def prepend(self, val):
         if self.size == self.capacity:
             self.capacity *= 2
             new_array = [None] * self.capacity
-            new_array[1:self.size] = self.array
-            return
+            new_array[:self.size] = self.array[1:self.size + 1]
         else:
-            for i in range(0, len(self), -1):
-                self.array[i + 1] = self.array[i]
+            array[1:self.size + 1] = array[:self.size]
         self.size += 1
         new_array[0] = val
-    
-
-
-        return
-        
-
 
     def insert_at():
         pass
@@ -63,4 +53,3 @@ class ArrayList:
 
     def get():
         pass
-

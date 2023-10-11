@@ -17,5 +17,13 @@ class TestArrayList(unittest.TestCase):
         self.assertEqual(len(array), 2)
         self.assertEqual(array.capacity, 5)
 
+    def test_prepend(self):
+        array = ArrayList()
+        array.prepend(1)
+        array.prepend(2)
+        self.assertEqual(array[0], 2)
+        self.assertEqual(len(array), 2)
+
+
 if __name__ == '__main__':
     unittest.main()
