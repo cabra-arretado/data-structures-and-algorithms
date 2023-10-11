@@ -34,8 +34,23 @@ class ArrayList:
 
 
 
-    def prepend():
-        pass
+    def prepend(self, val):
+        if self.size == self.capacity:
+            self.capacity *= 2
+            new_array = [None] * self.capacity
+            new_array[1:self.size] = self.array
+            return
+        else:
+            for i in range(0, len(self), -1):
+                self.array[i + 1] = self.array[i]
+        self.size += 1
+        new_array[0] = val
+    
+
+
+        return
+        
+
 
     def insert_at():
         pass
