@@ -1,15 +1,16 @@
-# from array import array
+from array import array
 
 
 class ArrayList:
-    capacity = 5
-    size = 0
-    # for the sake of simplicity, we will use python's list, but in reality, we should use an array.array instance
-    array = [None] * capacity
+    capacity = None
+    size = None
+    array = None
+
     def __init__(self, capacity = 5):
-        self.array = []
-        self.size = 0
         self.capacity = capacity
+        # For the sake of using arra.array, we'll use -1 as a sentinel value
+        self.array = array('i', [-1] * self.capacity)
+        self.size = 0
 
     def __len__(self):
         return self.size
