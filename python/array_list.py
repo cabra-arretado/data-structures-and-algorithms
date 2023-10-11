@@ -11,6 +11,14 @@ class ArrayList:
         self.size = 0
         self.capacity = capacity
 
+    def __len__(self):
+        return self.size
+
+    def __getitem__(self, index):
+        if index >= self.size:
+            raise IndexError
+        return self.array[index]
+
     def append(self, val):
         if self.size == self.capacity:
             self.capacity *= 2

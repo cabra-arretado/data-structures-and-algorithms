@@ -51,7 +51,7 @@ export default class ArrayList<T> {
     }
   }
   remove(item: T): T | undefined {
-    for (let i = 0; i < this.length; i++){
+    for (let i = 0; i < this.length; i++) {
       if (this.array[i] === item) {
         let removed = this.array[i]
         for (let j = i; j < this.length; j++) {
