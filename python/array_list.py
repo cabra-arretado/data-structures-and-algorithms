@@ -16,9 +16,7 @@ class ArrayList:
         return self.size
 
     def __getitem__(self, index):
-        if index >= self.size:
-            raise IndexError
-        return self.array[index]
+        self.get(index)
 
     def append(self, val):
         if self.size == self.capacity:
@@ -51,5 +49,7 @@ class ArrayList:
     def remove():
         pass
 
-    def get():
-        pass
+    def get(self, index):
+        if index >= self.size or index < 0:
+            raise IndexError
+        return self.array[index]
