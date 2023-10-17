@@ -40,16 +40,16 @@ class ArrayList:
         self.size += 1
         new_array[0] = val
 
-    def insert_at():
+    def insert_at(self, index, val):
         pass
 
-    def remove_at():
+    def remove_at(self, index):
         pass
 
-    def remove():
-        pass
-
+    def remove(self, val):
+        pass 
     def get(self, index):
+
         if index >= self.size or index < 0:
             raise IndexError
         return self.array[index]
